@@ -2087,7 +2087,7 @@ class HSClient(object):
         ccs_payload = HSFormat.format_dict_list(ccs, 'ccs', 'role_name')
 
         # Custom fields
-        custom_fields_payload = HSFormat.format_custom_fields(custom_fields)
+        custom_fields_payload = HSFormat.format_editable_custom_fields(custom_fields)
 
         # Metadata
         metadata_payload = HSFormat.format_single_dict(metadata, 'metadata')

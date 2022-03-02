@@ -135,6 +135,22 @@ class HSFormat(object):
                 for key, value in custom_field.items():
                     output_payload["custom_fields[" + key + "]"] = value
         return output_payload
+    
+    @staticmethod
+    def format_editable_custom_fields(list_of_custom_fields):
+        '''
+            Custom fields formatting for submission
+            custom_field: {  
+                "name": the name of the custom field
+                "value": the value of the custom field
+                "editor": optional, but required if 'required' is set to 'true'
+                "required": a boolean describing if this field is required (default: false)
+            }
+        '''
+        output_payload = {}
+        if list_of_custom_fields:
+            output_payload['custom_fields'] = list_of_custom_fields
+        return output_payload
 
     @staticmethod
     def format_signing_options(listed_params, output_name):
