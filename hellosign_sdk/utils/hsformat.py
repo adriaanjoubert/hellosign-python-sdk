@@ -149,7 +149,7 @@ class HSFormat(object):
         '''
         output_payload = {}
         if list_of_custom_fields:
-            output_payload['custom_fields'] = list_of_custom_fields
+            output_payload['custom_fields'] = json.dumps(list_of_custom_fields)
         return output_payload
 
     @staticmethod
